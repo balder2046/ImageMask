@@ -2,10 +2,11 @@ cmake_minimum_required(VERSION 3.6)
 project(ImageMask)
 
 #set(OpenCV_DIR "/usr/local/opt/opencv3/share/OpenCV")
+
 set(OpenCV_DIR "/usr/local/other/opencv-2.4.13/share/OpenCV")
 set(CUDA_USE_STATIC_CUDA_RUNTIME OFF)
-find_package(OpenCV)
 link_directories("/opt/Qt5.7.0/5.7/gcc_64/lib")
+find_package(OpenCV)
 include_directories(${OpenCV_INCLUDE_DIR})
 enable_testing()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
