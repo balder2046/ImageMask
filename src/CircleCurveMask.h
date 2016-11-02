@@ -10,6 +10,7 @@
 
 class CircleCurveMask : public MaskDataBase{
 public:
+
     CircleCurveMask(const cv::Point &center);
 
     virtual void FillMask(cv::Mat &matMask) override;

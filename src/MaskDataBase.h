@@ -47,7 +47,7 @@ protected:
 
 protected:
     bool mEditDone = false; // Edit complete?
-    bool mDirty = false;
+    bool mDirty = true;
 
 };
 typedef std::shared_ptr<MaskDataBase> MaskPtr;

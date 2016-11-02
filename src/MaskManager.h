@@ -32,6 +32,7 @@ public:
     void OnDraw(cv::Mat &frame);
 public:
     MaskPtr GetActiveMaskEditor();
+    bool IsDirty();
 public:
     void Iter(const std::function<void(MaskPtr)> &func);
 public:

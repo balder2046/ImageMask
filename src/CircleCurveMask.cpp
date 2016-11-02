@@ -26,6 +26,7 @@ void CircleCurveMask::OnMouse(int event, int x, int y, int flags) {
     MaskDataBase::OnMouse(event, x, y, flags);
 }
 
-CircleCurveMask::CircleCurveMask() {
+CircleCurveMask::CircleCurveMask(const cv::Point &center) {
+    this->center = center;
 
 }

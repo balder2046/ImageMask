@@ -93,7 +93,7 @@ void MaskManager::NewMaskEditor() {
 void MaskManager::OnDraw(cv::Mat &frame) {
     // first calc the mask
     // the mask has 1 channel
-    cv::Mat mask(frame.rows,frame.cols,CV_8UC1);
+    cv::Mat mask(frame.rows,frame.cols,CV_8UC1,Scalar(0));
 
     for (int i = 0; i < (int)maskArray.size(); ++i)
     {
@@ -128,5 +128,20 @@ void MaskManager::ApplyPixelFuncWithMask(cv::Mat &frame, cv::Mat &mask) {
         }
     }
 
+
+}
+
+bool MaskManager::IsDirty() {
+    bool bDirty = false;
+    for (int i = 0; i < (int)maskArray.size(); ++i) {
+        MaskPtr ptr = maskArray[i];
+        if (ptr && ptr->isDirty())
+        {
+            bDirty = true;
+            break;
+        }
+
+    }
+    return bDirty;
 
 }
